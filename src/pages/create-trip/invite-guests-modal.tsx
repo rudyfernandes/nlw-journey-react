@@ -5,7 +5,7 @@ import { Button } from "../../components/button"
 interface InviteGuestsModalProps {
     closeGuestsModal: () => void
     emailsToInvite: string[]
-    addNewEmailToInvite: (event: FormEvent<HTMLFormElement>) => void 
+    addNewEmailToInvite: (event:FormEvent<HTMLFormElement>) => void 
     removeEmailFromInvites: (email: string) => void 
 }
 
@@ -42,7 +42,7 @@ export function InviteGuestsModal({closeGuestsModal, emailsToInvite, addNewEmail
                     <input className="bg-transparent placeholder-zinc-400 text-lg w-24 outline-none flex-1" type="email" name='email' placeholder="Digite o e-mail do convidado"/>
                 </div>
 
-                <Button type='submit' variant='primary'>
+                <Button type='submit'>
                     Convidar
                     <Plus className='size-5'></Plus>
                 </Button>

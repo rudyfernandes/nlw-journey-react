@@ -27,7 +27,7 @@ export function InviteGuestsStep({
           
             <div className='w-px h-6 bg-zinc-700 mx-4'/>
 
-            <Button onClick={openConfirmTripModal} variant='primary'>
+            <Button onClick={openConfirmTripModal} type="button" variant='primary'>
                 Confirmar viagem
                 <ArrowRight className='size-5 text-lime-950'/>
             </Button>

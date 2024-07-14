@@ -4,6 +4,8 @@
 
 * {
     min-width: 0;
+    --rdp-accent-color: #81cc00;
+    --rdp-background-color: #375800 ;
 }
 
 input {

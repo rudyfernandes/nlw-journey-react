@@ -1,15 +1,19 @@
-import { User, X } from "lucide-react"
+import { Mail, User, X } from "lucide-react"
 import { FormEvent } from "react"
 import { Button } from "../../components/button"
 
 interface ConfirmTripModalProps {
     closeConfirmTripModal: () => void
+    setOwnerName: (name: string) => void
+    setOwnerEmail: (email:string) => void
     createTrip: (event:FormEvent<HTMLFormElement>) => void 
 }
 
 export function ConfirmTripModal({
     closeConfirmTripModal,
-    createTrip
+    createTrip,
+    setOwnerName,
+    setOwnerEmail
 }: ConfirmTripModalProps) {
     return (
         <div className='fixed inset-0 bg-black/60 flex items-center justify-center'>
@@ -25,11 +29,22 @@ export function ConfirmTripModal({
             <form onSubmit={createTrip} className='space-y-3'>
               <div className='h-14 px-4 bg-zinc-950 border border-zinc-800 rounded-lg flex items-center gap-2'>
                 <User className='size-5 text-zinc-400'/>
-                <input className="bg-transparent placeholder-zinc-400 text-lg w-24 outline-none flex-1" type="text" name='name' placeholder="Seu nome completo"/>
+                <input 
+                  className="bg-transparent placeholder-zinc-400 text-lg w-24 outline-none flex-1" 
+                  onChange={event => setOwnerName(event.target.value)}
+                  type="text" 
+                  name='name' 
+                  placeholder="Seu nome completo"
+                />
               </div>
               <div className='h-14 px-4 bg-zinc-950 border border-zinc-800 rounded-lg flex items-center gap-2'>
-                <User className='size-5 text-zinc-400'/>
-                <input className="bg-transparent placeholder-zinc-400 text-lg w-24 outline-none flex-1" type="email" name='email' placeholder="Seu e-mail pessoal"/>
+                <Mail className='size-5 text-zinc-400'/>
+                <input 
+                 className="bg-transparent placeholder-zinc-400 text-lg w-24 outline-none flex-1" 
+                 onChange={event => setOwnerEmail(event.target.value)}
+                 type="email"
+                 name='email' 
+                 placeholder="Seu e-mail pessoal"/>
               </div>
 
               <Button type='submit' variant='primary' size="full">
